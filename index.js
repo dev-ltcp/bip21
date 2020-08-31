@@ -4,7 +4,7 @@
 var qs = require('qs')
 
 function decode (uri, urnScheme) {
-  urnScheme = urnScheme || 'bitcoin'
+  urnScheme = urnScheme || 'litecoinpos'
   var urnSchemeActual = uri.slice(0, urnScheme.length).toLowerCase()
   if (urnSchemeActual !== urnScheme ||
     uri.charAt(urnScheme.length) !== ':'
@@ -26,7 +26,7 @@ function decode (uri, urnScheme) {
 
 function encode (address, options, urnScheme) {
   options = options || {}
-  var scheme = urnScheme || 'bitcoin'
+  var scheme = urnScheme || 'litecoinpos'
   var query = qs.stringify(options)
 
   if (options.amount) {
